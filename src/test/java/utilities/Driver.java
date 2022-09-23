@@ -30,14 +30,17 @@ public class Driver {
             desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, ConfigReader.getProperty("platformName"));
             desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, ConfigReader.getProperty("platformVersion"));
             desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, ConfigReader.getProperty("deviceName"));
-            desiredCapabilities.setCapability(MobileCapabilityType.APP, ConfigReader.getProperty("appPath"));
+            desiredCapabilities.setCapability(MobileCapabilityType.BROWSER_NAME, ConfigReader.getProperty("BrowserName"));
+            desiredCapabilities.setCapability("chromedriverExecutable", "C:\\Users\\asus\\IdeaProjects\\AppiumTasks\\Drivers\\chromedriver.exe");
+
+            //  desiredCapabilities.setCapability(MobileCapabilityType.APP, ConfigReader.getProperty("appPath"));
             desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, true);
             desiredCapabilities.setCapability("autoAcceptAlert",true);
 
             if (ConfigReader.getProperty("platformName").equals("android")) {
                 //if you do not provide app path so you should provide "appPackage" and "appActivity"
-                desiredCapabilities.setCapability("appPackage","");
-                desiredCapabilities.setCapability("appActivity","");
+                desiredCapabilities.setCapability("appPackage","com.android.chrome");
+                desiredCapabilities.setCapability("appActivity","com.google.android.apps.chrome.Main");
                 appiumDriver = new AndroidDriver(appiumServerURL,desiredCapabilities);
                 appiumDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             }

@@ -6,3 +6,4 @@ Feature: Calculator task
     And Kullanici carpi islemini secer
     And Kullanici bes rakamina basar
     And Kullanici esittir isaretine secer
+    And Kullanici sonucun on oldugunu dogrular
