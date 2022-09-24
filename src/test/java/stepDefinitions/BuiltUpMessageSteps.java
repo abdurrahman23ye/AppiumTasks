@@ -8,8 +8,12 @@ import utilities.Driver;
 public class BuiltUpMessageSteps {
 
     BuiltUpMessage builtUpMessage=new BuiltUpMessage();
+
+    public BuiltUpMessageSteps() throws InterruptedException {
+    }
+
     @Given("Mesaj uygulamasi acilir")
-    public void mesajUygulamasiAcilir() {
+    public void mesajUygulamasiAcilir() throws InterruptedException {
 
         System.out.println(Driver.getAppiumDriver().getSessionId());
     }

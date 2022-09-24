@@ -10,28 +10,31 @@ public class CalculatorStepDefinitions {
 
     Calculator calculator=new Calculator();
 
+    public CalculatorStepDefinitions() throws InterruptedException {
+    }
+
 
     @Given("Kullanici calculator uygulamasini acar")
-    public void kullaniciCalculatorUygulamasiniAcar() {
+    public void kullaniciCalculatorUygulamasiniAcar() throws InterruptedException {
 
         Driver.getAppiumDriver();
     }
 
     @And("Kullanici {string} rakamina basar")
-    public void kullaniciRakaminaBasar(String number) {
+    public void kullaniciRakaminaBasar(String number) throws InterruptedException {
 
         Driver.getAppiumDriver().findElementById("com.google.android.calculator:id/digit_"+number).click();
     }
 
     @And("Kullanici arti isaretine basar")
-    public void kullaniciArtiIsaretineBasar() {
+    public void kullaniciArtiIsaretineBasar() throws InterruptedException {
         Driver.getAppiumDriver().findElementById("com.google.android.calculator:id/op_add").click();
 
 
     }
 
     @And("Kullanici esittir isaretine basar")
-    public void kullaniciEsittirIsaretineBasar() {
+    public void kullaniciEsittirIsaretineBasar() throws InterruptedException {
 
         Driver.getAppiumDriver().findElementById("com.google.android.calculator:id/eq").click();
 
@@ -39,7 +42,7 @@ public class CalculatorStepDefinitions {
     }
 
     @And("Kullanici sonucun dort oldugunu dogrular")
-    public void kullaniciSonucunDortOldugunuDogrular() {
+    public void kullaniciSonucunDortOldugunuDogrular() throws InterruptedException {
 
         ;
 

@@ -10,7 +10,7 @@ import java.time.Duration;
 
 public class BuiltUpMessage {
 
-    public BuiltUpMessage(){ PageFactory.
+    public BuiltUpMessage() throws InterruptedException { PageFactory.
             initElements(new AppiumFieldDecorator(Driver.
                     getAppiumDriver(), Duration.ofSeconds(15)),this);
     }

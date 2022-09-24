@@ -11,7 +11,7 @@ import java.time.Duration;
 
 public class ChromeWeb {
 
-    public ChromeWeb(){ PageFactory.
+    public ChromeWeb() throws InterruptedException { PageFactory.
             initElements(new AppiumFieldDecorator(Driver.
                     getAppiumDriver(), Duration.ofSeconds(15)),this);
     }
@@ -19,8 +19,10 @@ public class ChromeWeb {
 
 
 
-    @FindBy(xpath = "//input[@placeholder='Search Amazon']")
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View[1]/android.view.View")
     public MobileElement amazonSearchBox;
+
+
 
 
 

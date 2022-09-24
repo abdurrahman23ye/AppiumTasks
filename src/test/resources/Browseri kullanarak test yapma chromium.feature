@@ -9,9 +9,11 @@ Feature: Browser i driver ile calistirma
 
   Given Kullanici chrome browser i acar
     ## context ayarlanmali
-  And Kullanici context secimi yapar
+
 
     ##inspect icin //inspect icin chrome://inspect/#devices
+
+    ## ise yaramazsa normal inspector de ise yarar
   And Kullanici amazon a gider
     And Kullanici arama kutusunda nutella aratir
 

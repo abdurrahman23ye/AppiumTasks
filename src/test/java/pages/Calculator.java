@@ -10,7 +10,7 @@ import java.time.Duration;
 
 public class Calculator {
 
-    public Calculator(){ PageFactory.
+    public Calculator() throws InterruptedException { PageFactory.
             initElements(new AppiumFieldDecorator(Driver.
                     getAppiumDriver(), Duration.ofSeconds(15)),this);
     }
