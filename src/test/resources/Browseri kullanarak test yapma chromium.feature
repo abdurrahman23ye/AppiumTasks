@@ -14,6 +14,8 @@ Feature: Browser i driver ile calistirma
     ##inspect icin //inspect icin chrome://inspect/#devices
 
     ## ise yaramazsa normal inspector de ise yarar
+
+   And Kullanici uyariyi kapatir
   And Kullanici amazon a gider
     And Kullanici arama kutusunda nutella aratir
 
