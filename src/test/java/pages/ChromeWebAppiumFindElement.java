@@ -1,6 +1,5 @@
 package pages;
 
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
@@ -10,14 +9,17 @@ import utilities.Driver;
 
 import java.time.Duration;
 
-public class ChromeWeb {
+public class ChromeWebAppiumFindElement {
 
-    // Selenium'daki klasik page sayfasi CHROMİUM ile kullanılabilir.
+    public ChromeWebAppiumFindElement() {
+ // constructor fark etmiyor ama context chromium ise xpath olarak da web sayfasi inspect edildiyse
 
-    public ChromeWeb(){
+        // findby/selenium anotasyonu kullanilacak androidfindby calismiyor.
 
         try {
-            PageFactory.initElements(Driver.getAppiumDriver(),this);
+            PageFactory.
+                    initElements(new AppiumFieldDecorator(Driver.
+                            getAppiumDriver(), Duration.ofSeconds(15)), this);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -26,7 +28,7 @@ public class ChromeWeb {
     @FindBy(xpath = "//input[@data-action-type='DISMISS']")
     public WebElement DeliveryOptionClose;
 
-    @FindBy(xpath = "//input[@type='text']")
+    @AndroidFindBy(xpath = "//input[@type='text']")
     public WebElement searchBox;
 
    /* public ChromeWeb() throws InterruptedException { PageFactory.
