@@ -31,8 +31,9 @@ public class Driver {
             desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, ConfigReader.getProperty("platformName"));
             desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, ConfigReader.getProperty("platformVersion"));
             desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, ConfigReader.getProperty("deviceName"));
+            desiredCapabilities.setCapability("newCommandTimeout", 3600);
           //  desiredCapabilities.setCapability(MobileCapabilityType.BROWSER_NAME, ConfigReader.getProperty("browserName"));
-            desiredCapabilities.setCapability("chromedriverExecutable", "C:\\Users\\asus\\IdeaProjects\\AppiumTasks\\Drivers\\chromedriver.exe");
+           // desiredCapabilities.setCapability("chromedriverExecutable", "C:\\Users\\asus\\IdeaProjects\\AppiumTasks\\Drivers\\chromedriver.exe");
 
             //  desiredCapabilities.setCapability(MobileCapabilityType.APP, ConfigReader.getProperty("appPath"));
             desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, true);
