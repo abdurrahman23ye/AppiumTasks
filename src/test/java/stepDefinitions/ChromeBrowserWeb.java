@@ -118,4 +118,6 @@ public class ChromeBrowserWeb {
 
         chromeWebAppiumFindElement.searchBox.sendKeys("nutella"+Keys.ENTER);
     }
+
+
 }
