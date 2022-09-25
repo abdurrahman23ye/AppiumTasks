@@ -10,6 +10,9 @@ Feature: Browser i driver ile calistirma
   Given Kullanici chrome browser i acar
     ## context ayarlanmali
 
+    ## deneme
+
+
 
     ##inspect icin //inspect icin chrome://inspect/#devices
 
