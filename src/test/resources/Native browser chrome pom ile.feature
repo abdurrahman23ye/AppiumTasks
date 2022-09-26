@@ -9,3 +9,5 @@ Feature: Native browser pom ile
 
     ## Selenium um standart pom constructor veya findby notasyonlari calismiyor
   ## appium constructor i android notasyonla kullanmak gerek
+
+  ## git push sorunu icin deneme
