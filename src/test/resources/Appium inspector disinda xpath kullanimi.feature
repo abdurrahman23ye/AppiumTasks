@@ -12,7 +12,8 @@ Feature: Appium xpath kullanimi
 
     ## text e ihtiyac varsa genelde şu syntax i uyarlama ise yariyor
   ## //android.widget.TextView[@text='YouTube']
-  ## //android.widget.TextView[contains(@text,'')]
+  ## //android.widget.TextView[@text,'YouTube']  , e dikkat
+    # # //android.widget.TextView[contains(@text,'')]
 
 
    And Text ile youtube a tiklar
