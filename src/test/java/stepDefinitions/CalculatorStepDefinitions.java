@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.appium.java_client.AppiumDriver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
@@ -8,10 +9,22 @@ import utilities.Driver;
 
 public class CalculatorStepDefinitions {
 
+    static AppiumDriver driver;
+
+    static {
+        try {
+            driver = Driver.getAppiumDriver();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     Calculator calculator=new Calculator();
 
     public CalculatorStepDefinitions() throws InterruptedException {
     }
+
+
 
 
     @Given("Kullanici calculator uygulamasini acar")
@@ -87,4 +100,7 @@ public class CalculatorStepDefinitions {
     }
 
 
+    @Given("Kullanici calculator i acar")
+    public void kullaniciCalculatorIAcar() {
+    }
 }
