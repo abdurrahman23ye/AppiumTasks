@@ -129,4 +129,31 @@ public class CalculatorStepDefinitions {
 
       Assert.assertTrue(text.equals(driver.findElementById("com.google.android.calculator:id/result_final").getText()));
     }
+    static String text2;
+    @And("Kullanici {string} rakamina tiklar")
+    public void kullaniciRakaminaTiklar(String number) {
+        
+        driver.findElementById("com.google.android.calculator:id/digit_"+number).click();
+
+        text2=driver.findElementById("com.google.android.calculator:id/result_preview").getText();
+    }
+
+    @And("Kullanici toplama isaretine tiklar")
+    public void kullaniciToplamaIsaretineTiklar() {
+
+        driver.findElementById("com.google.android.calculator:id/op_add").click();
+    }
+
+    @And("Kullanici esittir isaretine tiklar")
+    public void kullaniciEsittirIsaretineTiklar() {
+
+        driver.findElementById("com.google.android.calculator:id/eq").click();
+
+    }
+
+    @And("Kullanici pre result ile resultin esit oldugunu dogrular")
+    public void kullaniciPreResultIleResultinEsitOldugunuDogrular() {
+
+        Assert.assertTrue(driver.findElementById("com.google.android.calculator:id/result_final").getText().equals(text2));
+    }
 }
