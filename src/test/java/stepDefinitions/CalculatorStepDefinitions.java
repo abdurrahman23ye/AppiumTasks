@@ -102,5 +102,31 @@ public class CalculatorStepDefinitions {
 
     @Given("Kullanici calculator i acar")
     public void kullaniciCalculatorIAcar() {
+
+        System.out.println(driver.getSessionId());
+    }
+
+    @And("Kullanici {string}sayisina tiklar")
+    public void kullaniciSayisinaTiklar(String number) {
+
+        driver.findElementById("com.google.android.calculator:id/digit_"+number).click();
+
+        text=  driver.findElementById("com.google.android.calculator:id/result_preview").getText();
+    }
+
+    @And("Kullanici carpma islemini secer")
+    public void kullaniciCarpmaIsleminiSecer() {
+
+        driver.findElementById("com.google.android.calculator:id/op_mul").click();
+    }
+    static String text;
+    @And("Kullanici pre result ile resultin ayni oldugunu dogrular")
+    public void kullaniciPreResultIleResultinAyniOldugunuDogrular() {
+
+
+
+        System.out.println(text);
+
+      Assert.assertTrue(text.equals(driver.findElementById("com.google.android.calculator:id/result_final").getText()));
     }
 }
