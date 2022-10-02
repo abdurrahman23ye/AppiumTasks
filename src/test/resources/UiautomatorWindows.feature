@@ -15,3 +15,5 @@ Feature: Uiautomator ile locate
     And Kullanici "5" rakamina tiklar
     And Kullanici esittir isaretine tiklar
     And Kullanici pre result ile resultin esit oldugunu dogrular
+
+    ## ikinci acilista hiyearşi hatasi verirse cmd->adb reconnect ile sorun cozuluyor
