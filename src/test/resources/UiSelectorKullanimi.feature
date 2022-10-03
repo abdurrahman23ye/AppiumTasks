@@ -18,3 +18,5 @@ Feature: uiselector
     ## index "" icinde olmaz
 
   And UiSelector text contains kullanimi
+
+    And UiSelector text startWith kullanimi

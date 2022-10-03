@@ -64,4 +64,22 @@ public class UiSelectorSteps {
                 .findElementByAndroidUIAutomator("UiSelector().className(\"android.widget.Button\").textContains(\"6\")").click();
 
     }
+
+    @And("UiSelector text startWith kullanimi")
+    public void uiselectorTextStartWithKullanimi() {
+
+        //className ve textcontains
+        driver
+                .findElementByAndroidUIAutomator("UiSelector().className(\"android.widget.Button\").textStartsWith(\"7\")").click();
+    }
+
+    @Given("Checkable")
+    public void checkable() {
+
+
+        //className ve textcontains
+        System.out.println(driver
+                .findElementByAndroidUIAutomator("UiSelector().resourceId(\"com.google.android.calculator:id/digit_1\").checkable(\"false\")"));
+
+    }
 }
