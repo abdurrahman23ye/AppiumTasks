@@ -47,4 +47,21 @@ public class UiSelectorSteps {
 
 
     }
+
+    @And("UiSelector ve index kullanimi")
+    public void uiselectorVeIndexKullanimi() {
+
+        //className ve index
+        driver
+                .findElementByAndroidUIAutomator("UiSelector().className(\"android.widget.Button\").index(5)").click();
+    }
+
+    @And("UiSelector text contains kullanimi")
+    public void uiselectorTextContainsKullanimi() {
+
+        //className ve textcontains
+        driver
+                .findElementByAndroidUIAutomator("UiSelector().className(\"android.widget.Button\").textContains(\"6\")").click();
+
+    }
 }

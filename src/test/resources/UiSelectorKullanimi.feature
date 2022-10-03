@@ -12,3 +12,9 @@ Feature: uiselector
   And Uiautomator className ile "5" e bas
 
     And UiSelector ve text kullanimi
+
+    And UiSelector ve index kullanimi
+
+    ## index "" icinde olmaz
+
+  And UiSelector text contains kullanimi
