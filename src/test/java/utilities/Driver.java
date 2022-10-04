@@ -32,9 +32,9 @@ public class Driver {
             desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, ConfigReader.getProperty("deviceName"));
 
           //  desiredCapabilities.setCapability(MobileCapabilityType.BROWSER_NAME, ConfigReader.getProperty("browserName"));
-           // desiredCapabilities.setCapability("chromedriverExecutable", "C:\\Users\\asus\\IdeaProjects\\AppiumTasks\\Drivers\\chromedriver.exe");
+         //  desiredCapabilities.setCapability("chromedriverExecutable", "C:\\Users\\asus\\IdeaProjects\\AppiumTasks\\Drivers\\chromedriver.exe");
 
-             desiredCapabilities.setCapability(MobileCapabilityType.APP, ConfigReader.getProperty("appPath"));
+        //     desiredCapabilities.setCapability(MobileCapabilityType.APP, ConfigReader.getProperty("appPath"));
           desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, true);
             desiredCapabilities.setCapability("autoAcceptAlert",true);
 
@@ -42,8 +42,8 @@ public class Driver {
 
             if (ConfigReader.getProperty("platformName").equals("android")) {
                 //if you do not provide app path so you should provide "appPackage" and "appActivity"
-               desiredCapabilities.setCapability("appPackage","com.google.android.calculator");
-           //    desiredCapabilities.setCapability("appActivity","com.android.calculator2.calculator");
+               desiredCapabilities.setCapability("appPackage","com.touchboarder.android.api.demos");
+             desiredCapabilities.setCapability("appActivity","com.touchboarder.androidapidemos.MainActivity");
                 assert appiumServerURL != null;
                 appiumDriver = new AndroidDriver(appiumServerURL,desiredCapabilities);
                 appiumDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
