@@ -8,4 +8,6 @@ Feature: uiselector
 
   Given Checkable
 
+    ##Checkable ve benzeri artributler "" icinde olmayacak
+
 

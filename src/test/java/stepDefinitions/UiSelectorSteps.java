@@ -79,7 +79,7 @@ public class UiSelectorSteps {
 
         //className ve textcontains
         System.out.println(driver
-                .findElementByAndroidUIAutomator("UiSelector().resourceId(\"com.google.android.calculator:id/digit_1\").checkable(\"false\")"));
+                .findElementByAndroidUIAutomator("UiSelector().resourceId(\"com.google.android.calculator:id/digit_1\").checkable(false)").getAttribute("checkable"));
 
     }
 }
