@@ -1,6 +1,8 @@
 Feature: Api demos
 
-  ##guncelleme iznini bulamadim calismiyor
+  ##locater da sorun var derstekini de kullandim sorun cozulmedi setting deyince bir usttekine
+
+  ## basiyor
 
   Scenario:
 
@@ -9,6 +11,7 @@ Feature: Api demos
     And Preference e tikla
     And Preference dependencies e tikla
     And Wifi butonunu check yap
+    And Wifi setting e tikla
   ##  And Wifi setting e tikla ve text gonder
   ##  And Ok a tikla
 

@@ -1,29 +1,31 @@
 package stepDefinitions;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import org.openqa.selenium.WebElement;
 import utilities.Driver;
 
-public class ApiDemosSteps {
-    static AndroidDriver<AndroidElement> driver;
+import java.awt.*;
+import java.util.List;
 
-    static {
-        try {
-            driver = (AndroidDriver) Driver.getAppiumDriver();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
+public class ApiDemosSteps {
+    static AndroidDriver driver;
+
+
 
     @Given("Api demos uygulamasini u ac")
-    public void apiDemosUygulamasiniUAc() {
+    public void apiDemosUygulamasiniUAc() throws InterruptedException {
+        driver= (AndroidDriver) Driver.getAppiumDriver();
     }
 
     @And("Api demos a tikla")
-    public void apiDemosATikla() {
+    public void apiDemosATikla() throws InterruptedException {
+
+
       driver
               .findElementByAndroidUIAutomator("UiSelector().resourceId(\"android:id/text1\").index(2)").click();
     }
@@ -48,9 +50,20 @@ public class ApiDemosSteps {
     @And("Wifi butonunu check yap")
     public void wifiButonunuCheckYap() {
 
+    List<AndroidElement> elementChecked= (List<AndroidElement>) driver
+                .findElementsByAndroidUIAutomator("UiSelector().className(\"android.widget.RelativeLayout\").index(0).checked(false)");
 
+
+    if(elementChecked.size()==1){elementChecked.get(0).click();}
+    }
+
+    @And("Wifi setting e tikla")
+    public void wifiSettingETikla() throws InterruptedException {
+
+        Thread.sleep(3000);
         driver
-                .findElementByAndroidUIAutomator("UiSelector().className(\"android.widget.RelativeLayout\").index(0)").click();
+                .findElementByXPath("//android.widget.TextView[@text='WiFi settings']").click();
+
 
     }
 }

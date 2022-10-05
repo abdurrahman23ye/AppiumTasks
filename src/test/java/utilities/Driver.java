@@ -35,15 +35,16 @@ public class Driver {
          //  desiredCapabilities.setCapability("chromedriverExecutable", "C:\\Users\\asus\\IdeaProjects\\AppiumTasks\\Drivers\\chromedriver.exe");
 
            desiredCapabilities.setCapability(MobileCapabilityType.APP, ConfigReader.getProperty("appPath"));
-        //  desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, true);
-          //  desiredCapabilities.setCapability("autoAcceptAlert",true);
+         desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, true);
+            desiredCapabilities.setCapability("autoAcceptAlert",true);
+            desiredCapabilities.setCapability("newCommandTimeout",0);
 
 
 
             if (ConfigReader.getProperty("platformName").equals("android")) {
                 //if you do not provide app path so you should provide "appPackage" and "appActivity"
-             desiredCapabilities.setCapability("appPackage","com.touchboarder.android.api.demos");
-           //  desiredCapabilities.setCapability("appActivity","com.touchboarder.androidapidemos.MainActivity");
+       //  desiredCapabilities.setCapability("appPackage","com.touchboarder.android.api.demos");
+       //desiredCapabilities.setCapability("appActivity","com.touchboarder.androidapidemos.mainActivity");
                 assert appiumServerURL != null;
                 appiumDriver = new AndroidDriver(appiumServerURL,desiredCapabilities);
                 appiumDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
